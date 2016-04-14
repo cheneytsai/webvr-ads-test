@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Composite</title>
+    <meta name="description" content="A-Frame + Ads Test">
+    <script src="js/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="pdx" src="img/invite.png">
+        <a-asset-item id="why-male-models" src="img/man.dae"></a-asset-item>
+      </a-assets>
+      <a-entity position="0 1.8 5" rotation="0 90 0">
+        <a-entity camera look-controls wasd-controls></a-entity>
+      </a-entity>
+
+
+      <a-sky src="img/pano.jpg"></a-sky>
+      <a-entity id="model" position="-8 0 1.5">
+        <a-collada-model position="7.35 0 -.55" rotation="0 -20 0" scale="1.5 1.5 1.5" src="#why-male-models"></a-collada-model>
+        <a-image src="img/radial-shadow-2.png" rotation="-90 0 0" scale="0.5 0.5 0.5"></a-image>
+      </a-entity>
+      <a-curvedimage src="#pdx" height="5" radius="15" theta-length="156"
+                 position="-6 0.6 1.2" rotation="0 150 0" scale="0.8 0.8 0.8"></a-curvedimage>
+
+    </a-scene>
+  </body>
+</html>

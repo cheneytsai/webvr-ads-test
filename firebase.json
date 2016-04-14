@@ -1,0 +1,9 @@
+{
+  "firebase": "webvr-ads-test",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
