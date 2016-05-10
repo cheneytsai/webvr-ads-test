@@ -6,33 +6,45 @@
     <meta name="description" content="A-Frame + Ads Test">
     <script src="js/aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
     <script src="js/main.js"></script>
+
   </head>
   <body>
     <a-scene>
-      <a-assets timeout="10000">
-        <img id="pdx" src="img/symphony.png">
+      <!--define assets-->
+      <a-assets>
 
-        <img crossOrigin id="ad" src="https://pubads.g.doubleclick.net/gampad/ad?iu=/35096353/amptesting/image/static&sz=300x250&c=12345">
-        <a-asset-item id="sculpture" src="img/sculpture.dae"></a-asset-item>
       </a-assets>
-      <a-entity position="0 1.8 5" rotation="0 90 0">
-        <a-entity camera look-controls wasd-controls></a-entity>
-      </a-entity>
+
+    <a-entity text="text: VR Demo - Use SimpleURL to traffic dynamic textures for 3d models" position="-8 6 0" scale="0.5 0.5"></a-entity>
+    <a-entity text="text: Usecase: Change branded shirt, soft drink, etc. depending on viewer/intent" position="-8 5.5 0" scale="0.5 0.5"></a-entity>
 
 
-      <a-sky src="img/concerthall.jpg"></a-sky>
+    <a-sphere color="black" radius="1" position="-4 2 0" set-box1></a-sphere>
+    <a-entity text="text: Look at circle for DFP Request #1" position="-8 3.5 0" scale="0.5 0.5"></a-entity>
 
-      <a-box src="#ad" position="-3 1 5" rotation="0 45 0" metalness="0.4">
+    <a-sphere color="grey" radius="1" position="3 2 0" set-box2></a-sphere>
+    <a-entity text="text: Look at circle for DFP Request #2" position="2 3.5 0" scale="0.5 0.5"></a-entity>
+
+      <a-camera position="-0.3 2 10.4" rotation="0 70 90">
+          <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+    </a-camera>
+
+
+      <!--background image-->
+
+      <!--box model-->
+      <a-box position="-3 1 5" rotation="0 45 0" metalness="0.4">
         <a-animation attribute="rotation" from="-30 -30 0" to="330 330 0" dur="10000" easing="linear" repeat="inifite"></a-animation>
       </a-box>
-      <!--
-      <a-image src="#pdx" width="10" height="5" position="-2 1.2 1.2" scale="0.2 0.2 0.2"></a-image>
-    -->
-      <a-curvedimage src="#ad" height="4" radius="3" theta-length="150"
-                 position="-6 0.6 1.2" rotation="0 200 0" scale="0.8 0.8 0.8"></a-curvedimage>
-      <a-entity id="river" visible="false" geometry="primitive: plane" material="color: blue"
-                position="-10 0 0" width="1" height="1"  sound="src: img/four_seasons.mp3; autoplay: true"></a-entity>
+
+
+      <!--man-->
+      <a-entity  position="-8 0 1.5">
+        <a-obj-model id="obj" position="7.35 0 6.55" rotation="0 -20 0" scale="1.5 1.5 1.5" src="img/man.obj" material="color: red">
+      </a-entity> 
+        <!--<a-image src="img/radial-shadow-2.png" rotation="-90 0 0" scale="0.5 0.5 0.5"></a-image>-->
 
     </a-scene>
   </body>
